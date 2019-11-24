@@ -59,14 +59,18 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
+    treeShake: true,
     customVariables: ['~/assets/variables.scss'],
     theme: {
+      options: { customProperties: true },
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          light: colors.grey.lighten4,
+          dark: colors.grey.darken3,
+          primary: colors.blue.darken1,
           accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          secondary: colors.green.base,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
