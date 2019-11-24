@@ -1,17 +1,17 @@
 <template>
   <v-app-bar app dark color="light-blue darken-3">
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon/>
 
     <v-toolbar-title>
       Startup
       <span>Reporter</span>
     </v-toolbar-title>
 
-    <v-spacer></v-spacer>
+    <v-spacer/>
 
     <template v-for="(navLink, index) in navLinks">
       <template v-if="navLink.subLinks">
-        <v-menu :key="index" open-on-hover>
+        <v-menu :key="index" open-on-hover top>
           <template v-slot:activator="{ on }">
             <v-btn v-on="on" nuxt text tile color="light" height="64">
               {{ navLink.label }}
@@ -23,7 +23,7 @@
               :key="subIndex"
               :to="subLink.to"
             >
-              <v-list-item-title>{{subLink.label}}</v-list-item-title>
+              <v-list-item-title>{{ subLink.label }}</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -35,10 +35,12 @@
           text
           tile
           color="light"
-          height="64"
           :key="index"
+          height="64"
           :to="navLink.to"
-        >{{navLInk.label}}</v-btn>
+        >
+{{ navLink.label }}
+</v-btn>
       </template>
     </template>
   </v-app-bar>
