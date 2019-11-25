@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app dark color="light-blue darken-3">
+  <v-app-bar app color="light-blue darken-3">
     <v-app-bar-nav-icon />
 
     <v-toolbar-title>
@@ -11,19 +11,19 @@
 
     <template v-for="(navLink, index) in navLinks">
       <template v-if="navLink.subLinks">
-        <v-menu :key="index" open-on-hover bottom>
+        <v-menu :key="index" open-on-hover offset-y>
           <template v-slot:activator="{ on }">
             <v-btn v-on="on" nuxt text tile color="light" height="64">
               {{ navLink.label }}
             </v-btn>
           </template>
-          <v-list>
+          <v-list light tile color="light">
             <v-list-item
               v-for="(subLink, subIndex) in navLink.subLinks"
               :key="subIndex"
               :to="subLink.to"
             >
-              <v-list-item-title>{{ subLink.label }}</v-list-item-title>
+              {{ subLink.label }}
             </v-list-item>
           </v-list>
         </v-menu>
