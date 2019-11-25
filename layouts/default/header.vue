@@ -1,17 +1,17 @@
 <template>
   <v-app-bar app dark color="light-blue darken-3">
-    <v-app-bar-nav-icon/>
+    <v-app-bar-nav-icon />
 
     <v-toolbar-title>
       Startup
       <span>Reporter</span>
     </v-toolbar-title>
 
-    <v-spacer/>
+    <v-spacer />
 
     <template v-for="(navLink, index) in navLinks">
       <template v-if="navLink.subLinks">
-        <v-menu :key="index" open-on-hover top>
+        <v-menu :key="index" open-on-hover bottom>
           <template v-slot:activator="{ on }">
             <v-btn v-on="on" nuxt text tile color="light" height="64">
               {{ navLink.label }}
@@ -31,16 +31,16 @@
 
       <template v-else>
         <v-btn
+          :key="index"
+          :to="navLink.to"
           nuxt
           text
           tile
           color="light"
-          :key="index"
           height="64"
-          :to="navLink.to"
         >
-{{ navLink.label }}
-</v-btn>
+          {{ navLink.label }}
+        </v-btn>
       </template>
     </template>
   </v-app-bar>
