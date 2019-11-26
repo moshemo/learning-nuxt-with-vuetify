@@ -18,5 +18,9 @@
       "autoFix": true
     },
   ],
-  "vetur.validation.template": false
+  "vetur.validation.template": false,
+  "cSpell.ignoreWords": [
+    "djsh",
+    "jcoj"
+  ]
 }

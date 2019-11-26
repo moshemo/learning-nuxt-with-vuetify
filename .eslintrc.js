@@ -6,10 +6,10 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:nuxt/recommended',
+    'plugin:prettier/recommended',
     'plugin:vue/recommended',
     'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
     // '@nuxtjs',
     // 'prettier',
   ],

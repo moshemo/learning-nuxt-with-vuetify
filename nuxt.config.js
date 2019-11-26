@@ -30,7 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: `~/plugins/axios.js` }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -53,7 +53,16 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    credentials: true
+  },
+
+  env: {
+    FEEDLY_USER_ID: 'bc127873-c00c-4adb-ad1b-cd5680af094c',
+
+    FEEDLY_ACCESS_TOKEN:
+      'Az-Awt53Ze6oJpRpSmYPZ5XIx1DGPKxI6NmliJDwly9Mk7ySbw00WPWOfd5XrPhOBSy-rE-XttAdK4ca-v2LVwJcojS5mnM87AzkNI02cbg-wSCsr88WiLGk80VDjsh7ebaDK_zvypaFgIULbWsXK5K9dqSkUs6AQst1c13PhoxYsnnVsP084aS58QZltfhZhV30Mgwvi93Zj_FFF7Z8do52ZtXKvoehcLOhPlHmpo2ogh073gsXUTHAXKR13g:feedlydev'
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -86,16 +95,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      // Run ESLint on save
-      // if (ctx.isDev && ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: 'pre',
-      //     test: /\.(js|vue|ts)$/,
-      //     loader: 'eslint-loader',
-      //     exclude: /(node_modules)/
-      //   })
-      // }
-    }
+    // extend(config, ctx) {
+    //   // Run ESLint on save
+    //   // if (ctx.isDev && ctx.isClient) {
+    //   //   config.module.rules.push({
+    //   //     enforce: 'pre',
+    //   //     test: /\.(js|vue|ts)$/,
+    //   //     loader: 'eslint-loader',
+    //   //     exclude: /(node_modules)/
+    //   //   })
+    //   // }
+    // }
   }
 }

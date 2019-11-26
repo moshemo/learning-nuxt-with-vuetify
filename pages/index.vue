@@ -4,13 +4,8 @@
 
 <script>
 export default {
-  props: {
-    newsArticles: {
-      type: Array,
-      required: true
-    }
+  async fetch({ store }) {
+    await store.dispatch('fetchArticles', GET_FEEDLY_URL)
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

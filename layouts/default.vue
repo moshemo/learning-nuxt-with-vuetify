@@ -11,6 +11,7 @@
 <script>
 import Header from './default/header'
 import Footer from './default/footer'
+
 export default {
   components: {
     Footer,
