@@ -16,14 +16,25 @@
 
 <script>
 export default {
-  async asyncData({ app }) {
-    const feedlyArticles = await app.$axios.$get(
+  async fetch({ store }) {
+    await store.dispatch(
+      'fetchNewsArticles',
       'https://cloud.feedly.com/v3/streams/contents?streamId=user/bc127873-c00c-4adb-ad1b-cd5680af094c/tag/2335b2f9-1337-4375-a956-1c9eca671996'
     )
-
-    return {
-      articles: feedlyArticles.items
+  },
+  computed: {
+    articles() {
+      return this.$store.getters.getNewsArticles
     }
   }
+  // async asyncData({ app }) {
+  //   const feedlyArticles = await app.$axios.$get(
+  //     'https://cloud.feedly.com/v3/streams/contents?streamId=user/bc127873-c00c-4adb-ad1b-cd5680af094c/tag/2335b2f9-1337-4375-a956-1c9eca671996'
+  //   )
+
+  //   return {
+  //     articles: feedlyArticles.items
+  //   }
+  // }
 }
 </script>

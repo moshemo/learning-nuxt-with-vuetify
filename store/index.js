@@ -1,26 +1,26 @@
-// import Vuex from 'vuex'
+import Vuex from 'vuex'
 
-// const createStore = () => {
-//   return new Vuex.store({
-//     state: {
-//       articles: []
-//     },
-//     getters: {
-//       getArticles: (state) => state.articles
-//     },
-//     mutations: {
-//       setArticles(state, feedArticles) {
-//         state.articles = feedArticles
-//       }
-//     },
-//     actions: {
-//       async fetchArticles({ commit }, apiUrl) {
-//         const fetchedArticles = await this.$axios.$get(apiUrl)
+const createStore = () => {
+  return new Vuex.store({
+    state: {
+      newsArticles: []
+    },
+    getters: {
+      getNewsArticles: (state) => state.newsArticles
+    },
+    mutations: {
+      setNewsArticles(state, newsArticles) {
+        state.newsArticles = newsArticles
+      }
+    },
+    actions: {
+      async fetchNewsArticles({ commit }, apiUrl) {
+        const { items } = await this.$axios.$get(apiUrl)
 
-//         commit('setArticles', fetchedArticles)
-//       }
-//     }
-//   })
-// }
+        commit('setNewsArticles', items)
+      }
+    }
+  })
+}
 
-// export default createStore
+export default createStore
