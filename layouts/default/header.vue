@@ -13,7 +13,7 @@
       <template v-if="navLink.subLinks">
         <v-menu :key="index" open-on-hover offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn v-on="on" nuxt text tile color="light" height="64">
+            <v-btn nuxt text tile color="light" height="64" v-on="on">
               {{ navLink.label }}
             </v-btn>
           </template>

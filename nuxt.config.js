@@ -45,16 +45,24 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv', // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/proxy'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    credentials: true
+    credentials: true,
+    proxy: true
+  },
+
+  proxy: {
+    '/feedlyApi/': {
+      target: 'https://cloud.feedly.com/v3/streams/contents?',
+      pathRewrite: { '^/feedlyApi/': '' }
+    }
   },
 
   env: {

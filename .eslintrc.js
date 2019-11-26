@@ -28,6 +28,10 @@ module.exports = {
     // semi: [2, 'never'],
     // 'no-console': 'off',
     // 'vue/max-attributes-per-line': 'off',
-    // 'prettier/prettier': ['error', { semi: false }]
+    'prettier/prettier': ['error', {
+      semi: false,
+      'endOfLine': 'auto'
+      }
+    ]
   }
 }
