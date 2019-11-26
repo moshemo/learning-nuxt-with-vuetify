@@ -1,5 +1,16 @@
 <template>
-  <div>
-    <h3>Home</h3>
-  </div>
+  <div></div>
 </template>
+
+<script>
+export default {
+  props: {
+    newsArticles: {
+      type: Array,
+      required: true
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped></style>
