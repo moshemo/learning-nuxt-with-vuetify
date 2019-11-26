@@ -6,7 +6,7 @@ const createStore = () => {
       articles: []
     },
     getters: {
-      getArticles: state => state.articles
+      getArticles: (state) => state.articles
     },
     mutations: {
       setArticles(state, feedArticles) {
@@ -15,7 +15,7 @@ const createStore = () => {
     },
     actions: {
       async fetchArticles({ commit }, apiUrl) {
-        const fetchedArticles = await this.$axios.$get(apiUrl);
+        const fetchedArticles = await this.$axios.$get(apiUrl)
 
         commit('setArticles', fetchedArticles)
       }
