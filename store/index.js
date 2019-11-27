@@ -1,7 +1,7 @@
 import Vuex from 'vuex'
 
 const createStore = () => {
-  return new Vuex.store({
+  return new Vuex.Store({
     state: {
       newsArticles: []
     },
